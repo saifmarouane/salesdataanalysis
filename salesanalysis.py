@@ -69,7 +69,7 @@ data['Order Date'].str
 # In[15]:
 
 
-data['month']=data['Order Date'].str[0:2].map({'01':'janvier','02':'fevrier','03':'mars','04':'avril','05':'mai','06':'join','07':'jueilt','08':'out','09':'ceptember','10':'october','11':'novomber','12':'december'})
+data['month']=data['Order Date'].str[0:2].map({'01':'janvier','02':'fevrier','03':'mars','04':'avril','05':'mai','06':'juin','07':'juillet','08':'out','09':'ceptember','10':'october','11':'november','12':'december'})
 
 
 # In[16]:
@@ -240,32 +240,32 @@ mai.groupby('Product').Price.describe()
 # In[41]:
 
 
-join=data[data['month'] == 'join']
-join.head()
+juin=data[data['month'] == 'juin']
+juin.head()
 
 
 # In[42]:
 
 
-join.groupby('Product').Price.describe()
+juin.groupby('Product').Price.describe()
 
 
 # In[43]:
 
 
-jueilt=data[data['month'] == 'jueilt']
+juillet=data[data['month'] == 'juillet']
 
 
 # In[44]:
 
 
-jueilt.head()
+juillet.head()
 
 
 # In[45]:
 
 
-jueilt.groupby('Product').Price.describe()
+juillet.groupby('Product').Price.describe()
 
 
 # In[46]:
@@ -319,13 +319,13 @@ october.groupby('Product').Price.describe()
 # In[54]:
 
 
-novomber=data[data['month'] == 'novomber']
+november=data[data['month'] == 'november']
 
 
 # In[55]:
 
 
-novomber.groupby('Product').Price.describe()
+november.groupby('Product').Price.describe()
 
 
 # In[56]:
@@ -456,12 +456,12 @@ fevrier_describe=fevrier.groupby('Product').Price.describe()
 mars_describe=mars.groupby('Product').Price.describe()
 avril_describe=avril.groupby('Product').Price.describe()
 mai_describe=mai.groupby('Product').Price.describe()
-join_describe=join.groupby('Product').Price.describe()
-jueilt_describe=jueilt.groupby('Product').Price.describe()
+juin_describe=juin.groupby('Product').Price.describe()
+juillet_describe=juillet.groupby('Product').Price.describe()
 out_describe=out.groupby('Product').Price.describe()
 ceptember_describe=ceptember.groupby('Product').Price.describe()
 october_describe=october.groupby('Product').Price.describe()
-novomber_describe=novomber.groupby('Product').Price.describe()
+november_describe=november.groupby('Product').Price.describe()
 december_describe=december.groupby('Product').Price.describe()
 
 
@@ -707,40 +707,40 @@ print('max', mai.groupby('data_spec').month.count().max() ,'min',mai.groupby('da
 # In[104]:
 
 
-join.groupby('Product').Price.describe()
+juin.groupby('Product').Price.describe()
 
 
 # In[105]:
 
 
-print(join.groupby('Product').Price.describe()['count'].min(),join.groupby('Product').Price.describe()['count'].max())
+print(juin.groupby('Product').Price.describe()['count'].min(),juin.groupby('Product').Price.describe()['count'].max())
 
 
 # In[106]:
 
 
-join_describe[join_describe['count']==1564]
+juin_describe[juin_describe['count']==1564]
 
 
 # In[107]:
 
 
-join_describe[join_describe['count']==43]
+juin_describe[juin_describe['count']==43]
 
 
 # In[113]:
 
 
 #nombre d achats pour les produits
-join_describe['count'].agg(['max','min','sum','mean','std'])
+juin_describe['count'].agg(['max','min','sum','mean','std'])
 
 
 # In[114]:
 
 
 #chifre d affaire pour 1 jours
-print('max', join.groupby('data_spec').month.count().max() ,'min',join.groupby('data_spec').month.count().min() ,
-      'mean' ,join.groupby('data_spec').month.count().mean()
+print('max', juin.groupby('data_spec').month.count().max() ,'min',juin.groupby('data_spec').month.count().min() ,
+      'mean' ,juin.groupby('data_spec').month.count().mean()
      )
 
 
@@ -749,40 +749,40 @@ print('max', join.groupby('data_spec').month.count().max() ,'min',join.groupby('
 # In[115]:
 
 
-jueilt.groupby('Product').Price.describe()
+juillet.groupby('Product').Price.describe()
 
 
 # In[116]:
 
 
-print(jueilt.groupby('Product').Price.describe()['count'].min(),jueilt.groupby('Product').Price.describe()['count'].max())
+print(juillet.groupby('Product').Price.describe()['count'].min(),juillet.groupby('Product').Price.describe()['count'].max())
 
 
 # In[120]:
 
 
-jueilt_describe[jueilt_describe['count']==1695]
+juillet_describe[juillet_describe['count']==1695]
 
 
 # In[124]:
 
 
-jueilt_describe[jueilt_describe['count']==52]
+juillet_describe[juillet_describe['count']==52]
 
 
 # In[125]:
 
 
 #nombre d achats pour les produits
-jueilt_describe['count'].agg(['max','min','sum','mean','std'])
+juillet_describe['count'].agg(['max','min','sum','mean','std'])
 
 
 # In[126]:
 
 
 #chifre d affaire pour 1 jours
-print('max', jueilt.groupby('data_spec').month.count().max() ,'min',jueilt.groupby('data_spec').month.count().min() ,
-      'mean' ,jueilt.groupby('data_spec').month.count().mean()
+print('max', juillet.groupby('data_spec').month.count().max() ,'min',juillet.groupby('data_spec').month.count().min() ,
+      'mean' ,juillet.groupby('data_spec').month.count().mean()
      )
 
 
@@ -923,40 +923,40 @@ print('max', october.groupby('data_spec').month.count().max() ,'min',october.gro
 # In[146]:
 
 
-novomber.groupby('Product').Price.describe()
+november.groupby('Product').Price.describe()
 
 
 # In[147]:
 
 
-print(novomber.groupby('Product').Price.describe()['count'].min(),novomber.groupby('Product').Price.describe()['count'].max())
+print(november.groupby('Product').Price.describe()['count'].min(),november.groupby('Product').Price.describe()['count'].max())
 
 
 # In[148]:
 
 
-novomber_describe[novomber_describe['count']==2062]
+november_describe[november_describe['count']==2062]
 
 
 # In[149]:
 
 
-novomber_describe[novomber_describe['count']==53]
+november_describe[november_describe['count']==53]
 
 
 # In[150]:
 
 
 #nombre d achats pour les produits
-novomber_describe['count'].agg(['max','min','sum','mean','std'])
+november_describe['count'].agg(['max','min','sum','mean','std'])
 
 
 # In[151]:
 
 
 #chifre d affaire pour 1 jours
-print('max', novomber.groupby('data_spec').month.count().max() ,'min',novomber.groupby('data_spec').month.count().min() ,
-      'mean' ,novomber.groupby('data_spec').month.count().mean()
+print('max', november.groupby('data_spec').month.count().max() ,'min',november.groupby('data_spec').month.count().min() ,
+      'mean' ,november.groupby('data_spec').month.count().mean()
      )
 
 
