@@ -31,11 +31,8 @@ L'entreprise souhaite analyser les ventes mensuelles pour comprendre la variatio
 
 ## Installation
 
-1. Clonez ce dépôt :
-    ```bash
-    git clone https://github.com/votre-utilisateur/analyse-des-ventes.git
-    ```
-2. Installez les dépendances nécessaires :
+
+1. Installez les dépendances nécessaires :
     ```bash
     pip install pandas numpy matplotlib
     ```
